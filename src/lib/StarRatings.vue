@@ -6,6 +6,7 @@ const props = defineProps({
   customClass: String,
   size: String,
   fillColor: {type: String, default: '#ED8A19'},
+  fontFamily: {type: String, default: 'system-ui'},
 });
 
 const emit = defineEmits(['starChange']);
@@ -52,9 +53,6 @@ function mouseout(index: number){
 </script>
 
 <template>
-   {{ props.starsCounts }}
-   {{ customClass }}
-   {{ fillColor }}
    <ul class="stars" ref="stars">
     <li
         v-for="(star, i) in starsCounts"
@@ -64,7 +62,7 @@ function mouseout(index: number){
         @mouseover="hover(i)"
         @mouseout="mouseout(i)"
         @click="mouseClick(i)"
-        :style="{fontSize: size, color: fillColor}"
+        :style="{fontSize: size, color: fillColor, fontFamily: fontFamily}"
         v-bind="$attrs"
     >
       &#9734;
@@ -74,7 +72,10 @@ function mouseout(index: number){
 </template>
 
 <style scoped>
-
+@font-face {
+  font-family: 'Shooting Star';
+  src: url('../assets/ShootingStar-Bold.otf');
+}
 .stars {
   display: flex;
 }
@@ -83,17 +84,10 @@ function mouseout(index: number){
   padding-left: 1rem;
   font-size: 3rem;
   cursor: pointer;
-  font-family: system-ui;
+  /* font-family: system-ui; */
 }
 .star:first-child{
   padding: 0;
 }
 
-.yellow {
-  color: #f7b552 !important
-}
-
-.orange {
-  color: #ED8A19;
-}
 </style>

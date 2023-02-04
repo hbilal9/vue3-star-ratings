@@ -1,18 +1,19 @@
 <script setup lang="ts">
-import Star from './components/Star.vue'
+import StarRatings from './lib/StarRatings.vue'
 
-function hello(e){
+function hello(e: any){
   console.log(e)
 }
 </script>
 
 <template> 
-  <Star @star-change="hello" class="custom-style" fill-color="#AED345" />
+  <StarRatings @star-change="hello" :stars-counts="7" class="custom-style" fill-color="#AED345" />
 </template>
 
 <style>
   .custom-style {
     /* color: red !important; */
     font-size: 5rem !important;
+    font-family: 'Courier New', Courier, monospace;
   }
 </style>
