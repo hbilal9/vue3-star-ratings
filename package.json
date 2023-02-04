@@ -1,6 +1,6 @@
 {
   "name": "vue3-stars-ratings",
-  "private": true,
+  "private": false,
   "version": "0.0.1",
   "type": "module",
   "keywords": [
@@ -11,10 +11,10 @@
   ],
   "exports": {
     ".": "./dist/index.js",
-    "./styles.css" : "./dist/style.css"
+    "./styles.css": "./dist/style.css"
   },
-  "broswer" : {
-    "./styles.css" : "./dist/style.css"
+  "broswer": {
+    "./styles.css": "./dist/style.css"
   },
   "license": "MIT",
   "files": [
