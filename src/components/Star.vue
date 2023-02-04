@@ -1,0 +1,99 @@
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const props = defineProps({
+  starsCounts: { type: Number, default: 5 },
+  customClass: String,
+  size: String,
+  fillColor: {type: String, default: '#ED8A19'},
+});
+
+const emit = defineEmits(['starChange']);
+
+function hover(index: number) {
+  const star = ref(null)
+  let counts = index + 1;
+  const el = document.querySelectorAll('.star');
+  el.forEach((elm, i) => {
+    if (i < counts) {
+      elm.innerHTML = '&#9733;';
+    }else{
+      elm.innerHTML = '&#9734;';
+    }
+  })
+}
+let selectedStart = ref(-1);
+function mouseClick(index: number) {
+  const star = ref(null)
+  let counts = index + 1;
+  const el = document.querySelectorAll('.star');
+  selectedStart.value = index;
+  el.forEach((elm, i) => {
+    if (i < counts) {
+      elm.innerHTML = '&#9733;';
+      emit('starChange', counts);
+    }else{
+      elm.innerHTML = '&#9734;';
+    }
+  })
+}
+
+function mouseout(index: number){
+  const el = document.querySelectorAll('.star');
+  el.forEach((elm, i) => {
+    if (i <= selectedStart.value) {
+      elm.innerHTML = '&#9733;';
+    }else{
+      elm.innerHTML = '&#9734;';
+    }
+  })
+}
+
+</script>
+
+<template>
+   {{ props.starsCounts }}
+   {{ customClass }}
+   {{ fillColor }}
+   <ul class="stars" ref="stars">
+    <li
+        v-for="(star, i) in starsCounts"
+        :key="i"
+        class="star"
+        :id="`star-`+i"
+        @mouseover="hover(i)"
+        @mouseout="mouseout(i)"
+        @click="mouseClick(i)"
+        :style="{fontSize: size, color: fillColor}"
+        v-bind="$attrs"
+    >
+      &#9734;
+    </li>
+   </ul>
+   
+</template>
+
+<style scoped>
+
+.stars {
+  display: flex;
+}
+.star {
+  list-style: none;
+  padding-left: 1rem;
+  font-size: 3rem;
+  cursor: pointer;
+  font-family: system-ui;
+}
+.star:first-child{
+  padding: 0;
+}
+
+.yellow {
+  color: #f7b552 !important
+}
+
+.orange {
+  color: #ED8A19;
+}
+</style>
