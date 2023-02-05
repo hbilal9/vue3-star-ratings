@@ -10,8 +10,7 @@ Vue 3 simple and customizable component for star ratings
 - customize color, size, font-family, and counts of stars
 
 ## Screenshots
-
-![App Screenshot](https://i.postimg.cc/yYX6rd3y/Screenshot-2023-02-05-at-12-49-58-PM.png)
+![App Screenshot](https://i.postimg.cc/2jHNqZWJ/vue-star-ratings.gif)
 
 ## Installation
 
