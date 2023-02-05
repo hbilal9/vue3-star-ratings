@@ -11,13 +11,15 @@ function hello(e: any){
 
 <template> 
   <star-ratings v-model="stars" @star-change="hello" :stars-counts="7" class="custom-style" fill-color="#AED345" />
-
-  {{ stars }}
+  <div>
+    You gives {{ stars }} ratings.
+  </div>
+  <!-- {{ stars }} -->
 </template>
 
 <style>
   .custom-style {
-    color: red !important;
+    /* color: red !important; */
     font-size: 5rem !important;
     font-family: 'Courier New', Courier, monospace;
   }

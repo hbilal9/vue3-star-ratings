@@ -9,6 +9,9 @@ Vue 3 simple and customizable component for star ratings
 - HTML Encode Characher Stars without quality loss
 - customize color, size, font-family, and counts of stars
 
+## Screenshots
+
+![App Screenshot](https://i.postimg.cc/yYX6rd3y/Screenshot-2023-02-05-at-12-49-58-PM.png)
 
 ## Installation
 
