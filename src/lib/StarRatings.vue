@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 
 const props = defineProps({
-  modelValue: String,
+  modelValue: Number,
   starsCounts: { type: Number, default: 5 },
   customClass: String,
   size: String,
