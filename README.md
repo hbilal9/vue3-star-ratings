@@ -22,6 +22,12 @@ Install Vue Stars Ratings with npm
 ```bash
   npm i @hbilal_9/vue3-star-ratings
 ```
+
+## Browser with CDN
+
+```html
+<script src="https://unpkg.com/@hbilal_9/vue3-star-ratings/dist/index.js"></script>
+```
     
 ## Setup
 
@@ -77,7 +83,7 @@ function getRatings(e){
 You can pass a custom class as a props to design the component according to your needs
 
 ```
-<star-ratings v-model="ratings" custom-class />
+<star-ratings v-model="ratings" class="custom-style" />
 ```
 
 css 

@@ -1,14 +1,21 @@
 {
   "name": "@hbilal_9/vue3-star-ratings",
   "private": false,
-  "version": "0.0.1",
+  "version": "0.0.3",
   "type": "module",
+  "unpkg": "./dist/index.js",
   "keywords": [
     "vue3",
     "vue-star-ratings",
+    "vue3-star",
+    "vue3-ratings",
     "stars ratings",
     "reviews"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hbilal9/vue3-star-ratings"
+  },
   "exports": {
     ".": "./dist/index.js",
     "./dist/style.css": "./dist/style.css"
