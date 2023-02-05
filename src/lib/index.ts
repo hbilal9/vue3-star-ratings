@@ -1,1 +1,1 @@
-export { default as StarsRatings } from './StarRatings.vue'
+export { default as StarRatings } from './StarRatings.vue'

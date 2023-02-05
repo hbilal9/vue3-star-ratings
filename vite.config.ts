@@ -23,9 +23,9 @@ export default defineConfig({
   build: {
     cssCodeSplit: false,
     lib: {
-      entry: "./src/StarsRatings.ts",
+      entry: "./src/StarRatings.ts",
       formats: ['es', 'cjs'],
-      name: "vue-star-ratings",
+      name: "StarRatings",
       fileName: (format) => (format === "es" ? "index.js" : "index.cjs")
     },
     rollupOptions: {

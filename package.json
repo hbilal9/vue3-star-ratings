@@ -1,5 +1,5 @@
 {
-  "name": "vue3-stars-ratings",
+  "name": "@hbilal_9/vue3-star-ratings",
   "private": false,
   "version": "0.0.1",
   "type": "module",
@@ -11,10 +11,10 @@
   ],
   "exports": {
     ".": "./dist/index.js",
-    "./styles.css": "./dist/style.css"
+    "./dist/style.css": "./dist/style.css"
   },
   "broswer": {
-    "./styles.css": "./dist/style.css"
+    "./dist/style.css": "./dist/style.css"
   },
   "license": "MIT",
   "files": [
@@ -22,10 +22,10 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc && vite build",
+    "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview"
   },
-  "dependencies": {
+  "peerDependencies": {
     "vue": "^3.2.45"
   },
   "devDependencies": {

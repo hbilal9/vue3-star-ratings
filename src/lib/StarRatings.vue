@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 
 const props = defineProps({
+  modelValue: String,
   starsCounts: { type: Number, default: 5 },
   customClass: String,
   size: String,
@@ -9,7 +10,7 @@ const props = defineProps({
   fontFamily: {type: String, default: 'system-ui'},
 });
 
-const emit = defineEmits(['starChange']);
+const emit = defineEmits(['starChange', 'update:modelValue']);
 
 function hover(index: number) {
   const star = ref(null)
@@ -33,6 +34,7 @@ function mouseClick(index: number) {
     if (i < counts) {
       elm.innerHTML = '&#9733;';
       emit('starChange', counts);
+      emit('update:modelValue', counts)
     }else{
       elm.innerHTML = '&#9734;';
     }
