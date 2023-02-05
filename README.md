@@ -1,18 +1,101 @@
-# Vue 3 + TypeScript + Vite
+# Vue Star Ratings
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Vue 3 simple and customizable component for star ratings
 
-## Recommended IDE Setup
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Features
 
-## Type Support For `.vue` Imports in TS
+- Simple to use
+- HTML Encode Characher Stars without quality loss
+- customize color, size, font-family, and counts of stars
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+## Installation
 
-1. Disable the built-in TypeScript Extension
-   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+Install Vue Stars Ratings with npm
+
+```bash
+  npm i @hbilal_9/vue3-star-ratings
+```
+    
+## Setup
+
+Import Images Dragger in main.ts
+
+```bash
+  import StarRatings from '@hbilal_9/vue3-star-ratings'
+  import '@hbilal_9/vue3-star-ratings/dist/style.css'
+  app.use(StarRatings)
+```
+
+Use as component
+
+```bash
+  import StarRatings from '@hbilal_9/vue3-star-ratings'
+  import '@hbilal_9/vue3-star-ratings/dist/style.css'
+```
+In template
+
+```
+  <star-ratings :starsCounts="7" v-model="ratings"></star-ratings>
+```
+you can also pass change event
+```
+  <star-ratings @star-change="getRatings"></star-ratings>
+```
+in script
+
+```
+function getRatings(e){
+    console.log(e)
+}
+```
+
+##  Usage
+```bash
+<script setup lang="ts">
+  import { ref } from 'vue';
+  const ratings = ref(0)
+
+</script>
+
+<template>
+    <star-ratings v-model="ratings"></star-ratings>
+
+    You added {{ ratings }} stars ratings.
+</template>
+
+```
+
+## Custom Style
+
+You can pass a custom class as a props to design the component according to your needs
+
+```
+<star-ratings v-model="ratings" custom-class />
+```
+
+css 
+
+```
+.custom-style {
+    color: red !important;
+    font-size: 5rem !important;
+    font-family: 'system-ui', 'Courier New', Courier, monospace;
+}
+```
+## Props
+
+| Prop          | Description                                                                                       | Type             | Default |
+| ------------- | ------------------------------------------------------------------------------------------------- | ---------------- | ------- |
+| starsCounts      | Stars counts                                | Number | 5      |
+| fillColor     | This is the color of the stars when active or hover                                                        | String           | #ED8A19 |
+| size     | star size in accept px and rem                                                        | String           | 3rem |
+| fontFamily     | This is the font family of the stars,this will auto select accounding to your system's fontFamily                                                  | String           | 'system-ui' |
+
+ 
+
+## Support Me
+support me to publish more packages like this for free.
+
+[![Coffee](https://img.shields.io/badge/Coffee-Buy%20me%20a%20coffee-yellow)](https://www.buymeacoffee.com/hbilal)
