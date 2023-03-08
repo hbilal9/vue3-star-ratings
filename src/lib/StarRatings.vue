@@ -10,12 +10,14 @@ const props = defineProps({
   fontFamily: {type: String, default: 'system-ui'},
 });
 
+let random = Math.floor(Math.random() * 100);
+
 const emit = defineEmits(['starChange', 'update:modelValue']);
 
 function hover(index: number) {
   const star = ref(null)
   let counts = index + 1;
-  const el = document.querySelectorAll('.star');
+  const el = document.querySelectorAll('.star-'+random);
   el.forEach((elm, i) => {
     if (i < counts) {
       elm.innerHTML = '&#9733;';
@@ -24,12 +26,12 @@ function hover(index: number) {
     }
   })
 }
-let selectedStart = ref(-1);
+let selectedStar = ref(-1);
 function mouseClick(index: number) {
   const star = ref(null)
   let counts = index + 1;
-  const el = document.querySelectorAll('.star');
-  selectedStart.value = index;
+  const el = document.querySelectorAll('.star-'+random);
+  selectedStar.value = index;
   el.forEach((elm, i) => {
     if (i < counts) {
       elm.innerHTML = '&#9733;';
@@ -42,9 +44,9 @@ function mouseClick(index: number) {
 }
 
 function mouseout(index: number){
-  const el = document.querySelectorAll('.star');
+  const el = document.querySelectorAll('.star-'+random);
   el.forEach((elm, i) => {
-    if (i <= selectedStart.value) {
+    if (i <= selectedStar.value) {
       elm.innerHTML = '&#9733;';
     }else{
       elm.innerHTML = '&#9734;';
@@ -60,7 +62,8 @@ function mouseout(index: number){
         v-for="(star, i) in starsCounts"
         :key="i"
         class="star"
-        :id="`star-`+i"
+        :class="`star-${random}`"
+        :id="`star-${i}`"
         @mouseover="hover(i)"
         @mouseout="mouseout(i)"
         @click="mouseClick(i)"

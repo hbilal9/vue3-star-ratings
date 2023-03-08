@@ -2,7 +2,9 @@
 // import StarRatings from './lib/StarRatings.vue'
 import {ref} from 'vue';
 
-const stars = ref(0);
+const stars1 = ref(0);
+const stars2 = ref(0);
+const stars3 = ref(0);
 
 function hello(e: any){
   console.log(e)
@@ -10,9 +12,13 @@ function hello(e: any){
 </script>
 
 <template> 
-  <star-ratings v-model="stars" @star-change="hello" :stars-counts="7" class="custom-style" fill-color="#AED345" />
+  <star-ratings v-model="stars1" @star-change="hello" :stars-counts="7" class="custom-style" fill-color="#AED345" />
+  <star-ratings v-model="stars2" @star-change="hello" :stars-counts="3" class="custom-style" fill-color="#AED345" />
+  <star-ratings v-model="stars3" @star-change="hello" :stars-counts="5" class="custom-style" fill-color="#AED345" />
   <div>
-    You gives {{ stars }} ratings.
+    You gives first {{ stars1 }} ratings. <br> <br>
+    You gives 2nd {{ stars2 }} ratings. <br> <br>
+    You gives 3rd {{ stars3 }} ratings.
   </div>
   <!-- {{ stars }} -->
 </template>
